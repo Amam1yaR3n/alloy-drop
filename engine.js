@@ -1,7 +1,7 @@
 export const TAU = Math.PI * 2;
 export const GAP = 154;
 export const mod = a => ((a % TAU) + TAU) % TAU;
-export const gapWidth = n => (90 - 60 * Math.min(29, Math.max(0, n - 1)) / 29) * Math.PI / 180;
+export const gapWidth = () => 30 * Math.PI / 180;
 export const inGap = (ring, rotation) => Math.abs(Math.atan2(Math.sin(Math.PI / 2 - ring.angle - rotation), Math.cos(Math.PI / 2 - ring.angle - rotation))) < gapWidth(ring.n) / 2;
 export const tiltSpeed = tilt => Math.sign(tilt) * Math.min(1, Math.max(0, Math.abs(tilt) - 3) / 22) * 120 * Math.PI / 180;
 export function screenTilt(beta, gamma, angle) {
